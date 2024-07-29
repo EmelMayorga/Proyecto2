@@ -3,14 +3,16 @@ const mail = document.getElementById("mail")
 const password = document.getElementById("password")
 const btnR = document.getElementById("btnR")
 
+let usersList = []
 btnR.addEventListener("click", function () {
+
         let user = {
             username:username.value,
             mail:mail.value,
-            password1:password.value
+            password:password.value
         }
-        localStorage.setItem("userInfo", JSON.stringify(user));
+        usersList.push(user)
+        console.log(usersList)   
+        localStorage.setItem("userInfo", JSON.stringify(usersList))
+        
 })
-
-console.log(JSON.parse(localStorage.getItem("userInfo")));
-

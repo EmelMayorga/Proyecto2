@@ -1,16 +1,17 @@
 const btnS = document.getElementById("btnS")
 const usernameI = document.getElementById("usernameI")
 const passwordI = document.getElementById("passwordI")
-let usersList = []
-//usersList.push(JSON.parse("userInfo"))
+
+const valores = JSON.parse(localStorage.getItem("userInfo")||[])
+
 btnS.addEventListener("click", function () {
-    for (let index = 0; index < usersList.length; index++) {
-        if (usersList[index].username === usernameI.value && usersList[index].password1 === passwordI.value) {
-            alert ("You have join the system")
+    for (let index = 0; index < valores.length; index++) {
+        if (valores[index].username === usernameI.value && valores[index].password === passwordI.value) {
+            window.location.href="http://127.0.0.1:5500/Proyecto2/src/html/taskpage.html"
         } else {
-           alert ("Username or Password wrong")
+         window.location.href="http://127.0.0.1:5500/Proyecto2/src/html/homepage.html"
         }
     }
 })
-console.log(usersList);
-console.log(JSON.parse(localStorage.getItem("userInfo")));
+
+
