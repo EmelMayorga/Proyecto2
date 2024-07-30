@@ -1,0 +1,28 @@
+body{
+    background-color: #e7e7e7;
+    font-family: "Inter"
+}
+.logo{
+    display: flex;
+    justify-content: center;
+    img{
+        width: 250px;
+        height: auto;
+    }
+}
+.registerBox{
+    font-family: "Inter";
+    background-color: white;
+    box-shadow: 0 20px 40px -5px rgba(80, 92, 103, 0.24);
+    border-radius: 2%;
+    margin-right: 20%;
+    margin-left: 20%;
+    text-align: center;
+    padding: 10px;
+
+}
+button{
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+}

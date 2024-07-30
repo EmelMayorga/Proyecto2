@@ -1,0 +1,29 @@
+body{
+    font-family: "Inter";
+    background-color: #e7e7e7;
+}
+.textBox{
+    margin-top: 40px;
+    font-family: "Inter";
+    background-color: white;
+    box-shadow: 0 20px 40px -5px rgba(80, 92, 103, 0.24);
+    border-radius: 2%;
+    margin-right: 20%;
+    margin-left: 20%;
+    text-align: center;
+    padding: 10px;
+}
+.boxTitle{
+    background-color: rgb(143, 13, 13);
+    border-radius: 15px;
+    color: white;
+    padding: 5px;
+}
+.logo{
+    display: flex;
+    justify-content: center;
+    img{
+        width: 250px;
+        height: auto;
+    }
+}

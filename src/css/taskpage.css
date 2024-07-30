@@ -1,0 +1,26 @@
+body{
+    font-family: "Inter";
+    background-color: #e7e7e7;
+}
+.pageTittle{
+    background-color: rgb(143, 13, 13);
+    border-radius: 15px;
+    color: white;
+    padding: 5px;
+    text-align: center;
+}
+.boxTittle{
+    background-color: white;
+    text-align: center;
+    box-shadow: 0 20px 40px -5px rgba(80, 92, 103, 0.24);
+}
+.containerT {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.taskList{
+    background-color: aqua;
+}
+.eventList{
+    background-color: blue;
+}

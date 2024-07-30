@@ -5,17 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tasks - IE</title>
 </head>
-<body>
+<body onload="reload()">
+    <link rel="stylesheet" href="../css/taskpage.css">
+   <div class="pageTittle">
     <h2>Tasks Management</h2>
+   </div> 
 
+   <div class="boxTittle">
     <p>Organize yourself</p>
     <input type="text" id="taskCreator">
     <input type="text" id="taskPriority">
+    <br>    
     <select id="selector">
         <option value="Task"> Task</option>
         <option value="Event">Event</option>
     </select>
+    <br>
     <button id="btnS">Save</button>
+   </div>
 
     <div id="containerT">
         <div id="taskList">
