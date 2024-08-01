@@ -6,8 +6,8 @@ const eventList =document.getElementById("eventList");
 const selector = document.getElementById("selector");
 const taskPriority = document.getElementById("taskPriority");
 
-let textListTask =  [];
-let textListEvent = [];
+let textListTask =  JSON.parse(localStorage.getItem("taskText"))||[]
+let textListEvent = JSON.parse(localStorage.getItem("eventText"))||[]
 
 btnS.addEventListener("click", function () {
     const selection = selector.value
@@ -29,13 +29,6 @@ btnS.addEventListener("click", function () {
             taskList.appendChild(containerN);
             textListTask.push(taskConca);
             localStorage.setItem("taskText", JSON.stringify(textListTask));
-
-        if (btnD.addEventListener("click", function () {
-            textListTask.filter(textListTask);
-            taskList.removeChild(containerN);
-            localStorage.setItem("taskText", JSON.stringify(textListTask));
-            alert("Deleted Succesfully");
-        })) {}
         
         if (btnE.addEventListener("click", function () {
             const btnA = document.createElement("button");
@@ -44,14 +37,34 @@ btnS.addEventListener("click", function () {
             pTag.contentEditable = true;
             pTag.style.backgroundColor = "#666";
             pTag.style.color = "white";
+            let = pastValueT =pTag.textContent
         
         if (btnA.addEventListener("click", function () {
             pTag.contentEditable = false;
-            pTag.style.backgroundColor = "White";
+            let taskListEdited = JSON.parse(localStorage.getItem("taskText"))||[];
+            console.log(pastValueT);
+            for (let index = 0; index < taskListEdited.length; index++) {
+                if (taskListEdited[index]===pastValueT) {
+                    console.log(taskListEdited);
+                    console.log(pTag.textContent);
+                    taskListEdited[index]=pTag.textContent;
+                    localStorage.setItem("taskText", JSON.stringify(taskListEdited));
+                }
+            }
+            pTag.style.backgroundColor = "#e7e7e7";
             pTag.style.color = "Black";
             this.after(btnA.remove())
         })){}
         })){}
+        if (btnD.addEventListener("click", function () {
+            let taskListDeleted =JSON.parse(localStorage.getItem("taskText"))||[];
+            const taskListupdated = taskListDeleted.filter(eventTask => eventTask != pTag.textContent);
+            localStorage.setItem("taskText", JSON.stringify(taskListupdated));
+            btnD.remove()
+            pTag.remove()
+            btnE.remove()
+            alert("Deleted Succesfully");
+        })) {}
          
     } else { if (selection === 'Event') {
         const containerN =document.createElement("div")
@@ -69,14 +82,7 @@ btnS.addEventListener("click", function () {
         eventList.appendChild(containerN);
         textListEvent.push(eventConca);
         localStorage.setItem("eventText", JSON.stringify(textListEvent));
-        
 
-        if (btnD.addEventListener("click", function () {
-            let evenListDeleted = textListEvent.JSON.parse(getItem)
-            eventList.removeChild(containerN);
-            alert("Deleted Succesfully");
-        })) {}
-        
         if (btnE.addEventListener("click", function () {
             const btnA = document.createElement("button");
             containerN.appendChild(btnA);
@@ -84,16 +90,39 @@ btnS.addEventListener("click", function () {
             pTag.contentEditable = true;
             pTag.style.backgroundColor = "#666";
             pTag.style.color = "white";
-
-
+            let pastValue = pTag.textContent
+            console.log(pastValue);
+   
                 if (btnA.addEventListener("click", function () {
-                    pTag.contentEditable = false;
-                    pTag.style.backgroundColor = "White";
+                    pTag.contentEditable = false; 
+                    let eventListEdited = JSON.parse(localStorage.getItem("eventText"))||[];
+                    console.log(pastValue);
+                   for (let index = 0; index < eventListEdited.length; index++) {
+                        if (eventListEdited[index] === pastValue) {
+                            console.log(eventListEdited);
+                            console.log(pTag.textContent);
+                             eventListEdited[index] = pTag.textContent;
+                             localStorage.setItem("eventText", JSON.stringify(eventListEdited));
+                        } 
+                    }   
+                    console.log(eventListEdited);
+                    pTag.style.backgroundColor="#e7e7e7"
                     pTag.style.color = "Black";
                     this.after(btnA.remove());
                 })){}
-             
-
-
         })){}
+
+        if (btnD.addEventListener("click", function () {
+            let eventListDeleted = JSON.parse(localStorage.getItem("eventText"))||[];
+            const eventListUpdated = eventListDeleted.filter(taskEvent => taskEvent != pTag.textContent)
+            localStorage.setItem("eventText", JSON.stringify(eventListUpdated))
+           
+            btnD.remove()
+            pTag.remove()
+            btnE.remove()
+
+            console.log("eventText");
+        })) {}
+          
+        
     } }})
